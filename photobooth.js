@@ -112,26 +112,6 @@
     }
   }
 
-  function buildCredits() {
-    const list = $("credit-list");
-    for (const c of S.cutouts) {
-      if (!c.credit) continue;
-      const li = document.createElement("li");
-      if (!c.credit.url) {
-        li.textContent = `${c.name} - ${c.credit.text || c.credit.author}`;
-        list.append(li);
-        continue;
-      }
-      const a = document.createElement("a");
-      a.href = c.credit.url;
-      a.target = "_blank";
-      a.rel = "noopener";
-      a.textContent = c.name;
-      li.append(a, ` - photo by ${c.credit.author}, ${c.credit.license}`);
-      list.append(li);
-    }
-  }
-
   async function choose(c) {
     current = c;
     $("now-name").textContent = c.name;
@@ -424,20 +404,6 @@
     o.drawImage(bg, 0, 0);
     drawFace(out, o);
 
-    // tiny photo credit in the corner (required by the CC licenses)
-    if (current.credit) {
-      const t = current.credit.text || `Photo: ${current.credit.author} / ${current.credit.license}`;
-      const fs = Math.max(10, Math.round(W / 70));
-      o.font = `${fs}px Arial, sans-serif`;
-      const tw = o.measureText(t).width;
-      o.fillStyle = "rgba(0,0,0,.55)";
-      o.fillRect(W - tw - fs, H - fs * 1.6, tw + fs, fs * 1.6);
-      o.fillStyle = "#fff";
-      o.textBaseline = "middle";
-      o.textAlign = "right";
-      o.fillText(t, W - fs / 2, H - fs * 0.8);
-    }
-
     // banner: crimson with cream checker edge
     o.fillStyle = C.crimson;
     o.fillRect(0, H, W, band);
@@ -521,7 +487,6 @@
   window.addEventListener("pagehide", stopCamera);
 
   buildPicker();
-  buildCredits();
   // start on Cignetti, or the first cutout
   const start = S.cutouts.find((c) => c.id === "cignetti") || S.cutouts[0];
   // wait for fonts so the cartoon jerseys and banner use the retro font

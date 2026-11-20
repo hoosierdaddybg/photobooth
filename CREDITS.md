@@ -1,9 +1,9 @@
 # Photo credits
 
-The athlete and coach photos come from Wikimedia Commons. The site loads them
+Most athlete and coach photos come from Wikimedia Commons. The site loads them
 straight from Wikimedia (`upload.wikimedia.org`), so they are not copied into
-this repo. Each photo's credit is also printed in small type on every picture
-the booth makes, because the CC BY and CC BY-SA licenses require attribution.
+this repo. The CC BY and CC BY-SA licenses require attribution, which this file
+provides; the site's footer links here.
 
 | Cutout | File on Commons | Author | License |
 |---|---|---|---|
