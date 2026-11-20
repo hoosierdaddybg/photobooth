@@ -17,7 +17,8 @@
 //              Use face-finder.html to get these numbers: drag a box over
 //              the face and it prints the line for you to paste here.
 //    credit  - who took the photo and the license (shown in tiny print on
-//              the picture and in the credits box; CC licenses require it)
+//              the picture and in the credits box; CC licenses require it).
+//              For your own photos you can just write { text: "Photo by me" }.
 //    jersey  - only for cartoon stand-ins: the number on the jersey
 // =====================================================================
 
@@ -134,47 +135,41 @@ const SETTINGS = {
       face: { x: 0.43, y: 0.19, rx: 0.12, ry: 0.10 },
       credit: { author: "Lorie Shaull", license: "CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Teri_Moren_03_(cropped).jpg" },
     },
-    // No free-to-use photos of these players exist yet. They show a cartoon
-    // stand-in until you drop a photo in images/ and set image + face + credit.
     {
       id: "beaumont",
       name: "Lenée Beaumont",
-      caption: "Photo needed: cartoon stand-in for now",
+      caption: "Guard, #5",
       group: "Women's Hoops",
-      image: null,
-      jersey: "5",
-      face: { x: 0.5, y: 0.27, rx: 0.17, ry: 0.16 },
-      credit: null,
+      image: "images/lenee-beaumont.jpg",
+      face: { x: 0.496, y: 0.26, rx: 0.08, ry: 0.108 },
+      credit: { text: "Photo provided by site owner" },
     },
     {
       id: "hare",
       name: "Kenzie Hare",
-      caption: "Photo needed: cartoon stand-in for now",
+      caption: "Guard, #22, candy-stripe pants",
       group: "Women's Hoops",
-      image: null,
-      jersey: "22",
-      face: { x: 0.5, y: 0.27, rx: 0.17, ry: 0.16 },
-      credit: null,
+      image: "images/kenzie-hare.jpg",
+      face: { x: 0.567, y: 0.158, rx: 0.063, ry: 0.069 },
+      credit: { text: "Photo provided by site owner" },
     },
     {
       id: "socka-nguemen",
       name: "Zania Socka-Nguemen",
-      caption: "Photo needed: cartoon stand-in for now",
+      caption: "Forward, #23",
       group: "Women's Hoops",
-      image: null,
-      jersey: "23",
-      face: { x: 0.5, y: 0.27, rx: 0.17, ry: 0.16 },
-      credit: null,
+      image: "images/zania-socka-nguemen.jpg",
+      face: { x: 0.458, y: 0.183, rx: 0.083, ry: 0.133 },
+      credit: { text: "Photo provided by site owner" },
     },
     {
       id: "samuels",
       name: "Malia Samuels",
-      caption: "Photo needed: cartoon stand-in for now",
+      caption: "Guard, #0, from Seattle",
       group: "Women's Hoops",
-      image: null,
-      jersey: "0",
-      face: { x: 0.5, y: 0.27, rx: 0.17, ry: 0.16 },
-      credit: null,
+      image: "images/malia-samuels.jpg",
+      face: { x: 0.521, y: 0.213, rx: 0.223, ry: 0.111 },
+      credit: { text: "Photo provided by site owner" },
     },
 
     // ------------------------------ LEGENDS -------------------------------

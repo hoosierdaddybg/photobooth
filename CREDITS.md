@@ -21,18 +21,19 @@ the booth makes, because the CC BY and CC BY-SA licenses require attribution.
 | Isiah Thomas | [Isiah Thomas 2007 (cropped).jpg](https://commons.wikimedia.org/wiki/File:Isiah_Thomas_2007_(cropped).jpg) | Keith Allison | CC BY-SA 2.0 |
 | Andrew Luck | [Andrew Luck at 2010 Stanford football open house.JPG](https://commons.wikimedia.org/wiki/File:Andrew_Luck_at_2010_Stanford_football_open_house.JPG) | BrokenSphere | CC BY 3.0 |
 
-## Still needs a photo
+## Photos provided by the site owner
 
-No freely licensed photos were found on Commons (as of November 2026) for these
-current IU women's basketball players. They show a cartoon jersey stand-in:
+| Cutout | File | Source |
+|---|---|---|
+| Lenée Beaumont | `images/lenee-beaumont.jpg` | Provided by the site owner (not a free license) |
+| Kenzie Hare | `images/kenzie-hare.jpg` | Provided by the site owner (not a free license) |
+| Zania Socka-Nguemen | `images/zania-socka-nguemen.jpg` | Provided by the site owner (not a free license) |
+| Malia Samuels | `images/malia-samuels.jpg` | Provided by the site owner, cropped from a signing graphic (not a free license) |
 
-- Lenée Beaumont (#5)
-- Kenzie Hare (#22)
-- Zania Socka-Nguemen (#23)
-- Malia Samuels (#0)
+## Other notes
 
-Only use a photo you took yourself or one with a license that allows reuse.
-Photos from IU Athletics, ESPN, Getty and similar sites are copyrighted.
+To add another athlete, only use a photo you took yourself, one with a license
+that allows reuse, or one the site owner provides.
 
 Aiden Sherrell, Darren Harris and Markus Burton's photos are from their previous
 schools (Alabama, Duke and Notre Dame), since no free photo of them in IU

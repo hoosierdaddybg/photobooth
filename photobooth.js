@@ -117,6 +117,11 @@
     for (const c of S.cutouts) {
       if (!c.credit) continue;
       const li = document.createElement("li");
+      if (!c.credit.url) {
+        li.textContent = `${c.name} - ${c.credit.text || c.credit.author}`;
+        list.append(li);
+        continue;
+      }
       const a = document.createElement("a");
       a.href = c.credit.url;
       a.target = "_blank";
@@ -421,7 +426,7 @@
 
     // tiny photo credit in the corner (required by the CC licenses)
     if (current.credit) {
-      const t = `Photo: ${current.credit.author} / ${current.credit.license}`;
+      const t = current.credit.text || `Photo: ${current.credit.author} / ${current.credit.license}`;
       const fs = Math.max(10, Math.round(W / 70));
       o.font = `${fs}px Arial, sans-serif`;
       const tw = o.measureText(t).width;
