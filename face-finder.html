@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Face Finder</title>
+  <style>
+    :root { --crimson: #990000; --cream: #EEEDEB; --ink: #1a0a0a; }
+    body { margin: 0; padding: 16px; background: var(--cream); color: var(--ink); font-family: system-ui, sans-serif; }
+    h1 { color: var(--crimson); margin: 0 0 8px; font-size: 24px; }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0; }
+    select, button, input { font: inherit; }
+    button { background: var(--crimson); color: var(--cream); border: 2px solid var(--ink); border-radius: 6px; padding: 6px 14px; cursor: pointer; }
+    .wrap { position: relative; display: inline-block; max-width: 100%; touch-action: none; user-select: none; }
+    .wrap img { display: block; max-width: 100%; max-height: 75vh; }
+    .oval { position: absolute; border: 3px dashed #ff2d6f; border-radius: 50%; background: rgba(255,255,255,.35); pointer-events: none; }
+    pre { background: #fff; border: 2px solid var(--ink); padding: 10px; white-space: pre-wrap; word-break: break-all; }
+    p { max-width: 640px; }
+  </style>
+</head>
+<body>
+  <h1>Face Finder</h1>
+  <p>Pick a cutout (or load your own picture), then drag a box over the face. Copy the line it prints and paste it over that athlete's <code>face:</code> line in <code>settings.js</code>.</p>
+  <div class="row">
+    <select id="pick"></select>
+    <label>or your own picture: <input type="file" id="file" accept="image/*"></label>
+  </div>
+  <div class="wrap" id="wrap"><img id="img" alt="Picture to mark"><div class="oval" id="oval" hidden></div></div>
+  <pre id="out">face: { x: 0.5, y: 0.3, rx: 0.15, ry: 0.15 },</pre>
+  <div class="row"><button id="copy">Copy</button><span id="copied"></span></div>
+
+  <script src="settings.js"></script>
+  <script>
+    const img = document.getElementById("img");
+    const wrap = document.getElementById("wrap");
+    const oval = document.getElementById("oval");
+    const out = document.getElementById("out");
+    const pick = document.getElementById("pick");
+    const r2 = (n) => Math.round(n * 1000) / 1000;
+
+    SETTINGS.cutouts.filter((c) => c.image).forEach((c, i) => {
+      const o = document.createElement("option");
+      o.value = i; o.textContent = c.name; o.dataset.id = c.id;
+      pick.append(o);
+    });
+    const withImg = SETTINGS.cutouts.filter((c) => c.image);
+    function show(c) {
+      img.src = c.image;
+      const f = c.face;
+      img.onload = () => draw(f.x, f.y, f.rx, f.ry);
+    }
+    pick.onchange = () => show(withImg[pick.value]);
+    document.getElementById("file").onchange = (e) => {
+      const f = e.target.files[0];
+      if (!f) return;
+      img.src = URL.createObjectURL(f);
+      img.onload = () => { oval.hidden = true; };
+    };
+    show(withImg[0]);
+
+    function draw(x, y, rx, ry) {
+      const w = img.clientWidth, h = img.clientHeight;
+      Object.assign(oval.style, { left: (x - rx) * w + "px", top: (y - ry) * h + "px", width: rx * 2 * w + "px", height: ry * 2 * h + "px" });
+      oval.hidden = false;
+      out.textContent = `face: { x: ${r2(x)}, y: ${r2(y)}, rx: ${r2(rx)}, ry: ${r2(ry)} },`;
+    }
+
+    let start = null;
+    const pos = (e) => {
+      const r = img.getBoundingClientRect();
+      return { x: Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)), y: Math.min(1, Math.max(0, (e.clientY - r.top) / r.height)) };
+    };
+    wrap.addEventListener("pointerdown", (e) => { start = pos(e); wrap.setPointerCapture(e.pointerId); });
+    wrap.addEventListener("pointermove", (e) => {
+      if (!start) return;
+      const p = pos(e);
+      const x0 = Math.min(start.x, p.x), x1 = Math.max(start.x, p.x);
+      const y0 = Math.min(start.y, p.y), y1 = Math.max(start.y, p.y);
+      draw((x0 + x1) / 2, (y0 + y1) / 2, Math.max(0.005, (x1 - x0) / 2), Math.max(0.005, (y1 - y0) / 2));
+    });
+    wrap.addEventListener("pointerup", () => { start = null; });
+    document.getElementById("copy").onclick = async () => {
+      try { await navigator.clipboard.writeText(out.textContent); document.getElementById("copied").textContent = "copied!"; }
+      catch (_) { document.getElementById("copied").textContent = "select the text and copy it"; }
+    };
+  </script>
+</body>
+</html>

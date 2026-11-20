@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hoosier Daddy Photobooth</title>
+  <meta name="description" content="Put your face on an Indiana Hoosiers legend. Nothing is uploaded or saved.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Comic+Neue:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23990000'/%3E%3Ctext x='50' y='72' font-size='64' text-anchor='middle' fill='%23EEEDEB' font-family='Arial Black'%3EIU%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>★ WELCOME TO THE HOOSIER DADDY PHOTOBOOTH ★ SIGN THE GUESTBOOK (just kidding, there is no guestbook) ★ GO IU! ★ NATIONAL CHAMPS ★ BEST VIEWED AT 800x600 ★ </span>
+      <span>★ WELCOME TO THE HOOSIER DADDY PHOTOBOOTH ★ SIGN THE GUESTBOOK (just kidding, there is no guestbook) ★ GO IU! ★ NATIONAL CHAMPS ★ BEST VIEWED AT 800x600 ★ </span>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="sticker sticker-new">NEW!</div>
+    <div class="sticker sticker-cool">GO<br>IU</div>
+    <h1 id="site-title">HOOSIER DADDY PHOTOBOOTH</h1>
+    <p id="site-tagline" class="tagline">Put your face on a Hoosier legend</p>
+    <div class="construction" aria-hidden="true"><span>🚧 UNDER CONSTRUCTION FOREVER 🚧</span></div>
+  </header>
+
+  <main>
+    <section class="panel" id="pick-panel">
+      <h2><span class="step">1</span> Pick your legend</h2>
+      <div id="shelves"></div>
+    </section>
+
+    <section class="panel booth-panel" id="booth-panel">
+      <h2><span class="step">2</span> Get in the booth</h2>
+      <p class="now-playing">Now starring: <b id="now-name">…</b></p>
+
+      <div class="tv">
+        <div class="tv-screen">
+          <canvas id="stage" aria-label="Photobooth preview"></canvas>
+          <div id="countdown" class="countdown" hidden></div>
+          <div id="flash" class="flash"></div>
+        </div>
+        <div class="tv-label">● REC &nbsp; HOOSIER-CAM 3000</div>
+      </div>
+
+      <div class="controls" id="live-controls">
+        <button id="camera-btn" class="btn btn-big">📷 TURN ON CAMERA</button>
+        <button id="snap-btn" class="btn btn-big btn-hot" hidden>SNAP IT! (3-2-1)</button>
+        <label class="zoom" id="zoom-wrap" hidden>
+          Face zoom
+          <input type="range" id="zoom" min="1" max="3.5" step="0.05">
+        </label>
+        <p class="privacy">🔒 <b>Totally private.</b> Everything happens on your phone/computer. Nothing is uploaded or saved anywhere, the camera turns off the moment the photo is taken, and closing the page throws the photo away.</p>
+        <p id="camera-error" class="error" hidden></p>
+      </div>
+
+      <div class="result" id="result" hidden>
+        <img id="result-img" alt="Your photobooth picture">
+        <div class="controls">
+          <a id="save-btn" class="btn btn-big" download>💾 SAVE</a>
+          <button id="share-btn" class="btn btn-big btn-sky" hidden>📤 SHARE</button>
+          <button id="retake-btn" class="btn btn-big btn-hot">🔁 RETAKE</button>
+        </div>
+        <p id="share-tip" class="tip">Tap Share to send it to your group chat, Instagram or AirDrop.</p>
+      </div>
+    </section>
+
+    <section class="panel side-panel">
+      <div class="counter" title="hit counter (vibes only)">
+        <span class="counter-label">You are visitor #</span>
+        <span class="counter-digits">0001987</span>
+      </div>
+      <p class="small">(The counter is fake: 1987 is for Keith Smart's shot. We don't count anything.)</p>
+      <div class="webring">
+        <a href="#pick-panel">« prev</a> | <b>IU WEBRING</b> | <a href="#booth-panel">next »</a>
+      </div>
+    </section>
+
+    <section class="panel credits" id="credits">
+      <h2>Photo credits</h2>
+      <p class="small">Athlete photos come from Wikimedia Commons under the licenses below and load straight from Wikimedia. Your selfie is never sent anywhere.</p>
+      <ul id="credit-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with Notepad · Not affiliated with Indiana University · For friends only</p>
+    <p class="blink">★ GO IU ★</p>
+  </footer>
+
+  <script src="settings.js"></script>
+  <script src="photobooth.js"></script>
+</body>
+</html>
