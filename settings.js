@@ -210,7 +210,7 @@ const SETTINGS = {
     {
       id: "luck",
       name: "Andrew Luck",
-      caption: "Works at Stanford, and so does luck. 🍀",
+      caption: "Stanford coworker",
       group: "Wildcard",
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Andrew_Luck_at_2010_Stanford_football_open_house.JPG/960px-Andrew_Luck_at_2010_Stanford_football_open_house.JPG",
       face: { x: 0.54, y: 0.27, rx: 0.15, ry: 0.145 },
