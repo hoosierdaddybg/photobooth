@@ -28,7 +28,7 @@ provides; the site's footer links here.
 | Lenée Beaumont | `images/lenee-beaumont.jpg` | Provided by the site owner (not a free license) |
 | Kenzie Hare | `images/kenzie-hare.jpg` | Provided by the site owner (not a free license) |
 | Zania Socka-Nguemen | `images/zania-socka-nguemen.jpg` | Provided by the site owner (not a free license) |
-| Malia Samuels | `images/malia-samuels.jpg` | Provided by the site owner, cropped from a signing graphic (not a free license) |
+| Malia Samuels | `images/malia-samuels.jpg` | Provided by the site owner, cropped from a birthday graphic (not a free license) |
 
 ## Other notes
 
