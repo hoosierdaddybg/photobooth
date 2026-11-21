@@ -100,7 +100,7 @@ const SETTINGS = {
     {
       id: "devries",
       name: "Darian DeVries",
-      caption: "Head coach, arms crossed, judging you",
+      caption: "Head coach",
       group: "Men's Hoops",
       image: "https://upload.wikimedia.org/wikipedia/commons/5/56/Darian_DeVries_in_2023_%28cropped%29.jpg",
       face: { x: 0.44, y: 0.23, rx: 0.15, ry: 0.17 },
@@ -109,7 +109,7 @@ const SETTINGS = {
     {
       id: "sherrell",
       name: "Aiden Sherrell",
-      caption: "Seven-foot IU big man (pictured at Alabama)",
+      caption: "#22",
       group: "Men's Hoops",
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Aiden_Sherrell.jpg/960px-Aiden_Sherrell.jpg",
       face: { x: 0.56, y: 0.40, rx: 0.085, ry: 0.07 },
@@ -118,7 +118,7 @@ const SETTINGS = {
     {
       id: "harris",
       name: "Darren Harris",
-      caption: "Press conference face (pictured at Duke)",
+      caption: "#1",
       group: "Men's Hoops",
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Darren_Harris_-_Duke-TCU_March_2026-1_%28cropped%29.jpg/960px-Darren_Harris_-_Duke-TCU_March_2026-1_%28cropped%29.jpg",
       face: { x: 0.48, y: 0.48, rx: 0.14, ry: 0.22 },
@@ -127,7 +127,7 @@ const SETTINGS = {
     {
       id: "burton",
       name: "Markus Burton",
-      caption: "Mishawaka's own (pictured at Notre Dame)",
+      caption: "#5",
       group: "Men's Hoops",
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Markus_Burton.jpg/960px-Markus_Burton.jpg",
       face: { x: 0.62, y: 0.345, rx: 0.16, ry: 0.165 },
@@ -138,7 +138,7 @@ const SETTINGS = {
     {
       id: "moren",
       name: "Teri Moren",
-      caption: "Head coach, crouched and locked in",
+      caption: "Head coach",
       group: "Women's Hoops",
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Teri_Moren_03_%28cropped%29.jpg/960px-Teri_Moren_03_%28cropped%29.jpg",
       face: { x: 0.43, y: 0.19, rx: 0.12, ry: 0.10 },
