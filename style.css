@@ -355,9 +355,7 @@ main {
 .webring { font-family: "VT323", monospace; font-size: 22px; margin-top: 8px; }
 .webring a { color: var(--crimson); }
 
-.credits ul { padding-left: 18px; margin: 8px 0 0; font-size: 14px; }
-.credits li { margin: 3px 0; }
-.credits a { color: var(--crimson); }
+footer a { color: var(--cream); }
 
 footer {
   text-align: center;
@@ -372,7 +370,7 @@ footer {
 
 @media (min-width: 900px) {
   main { grid-template-columns: 1fr 300px; }
-  #pick-panel, #booth-panel, .credits { grid-column: 1 / -1; }
+  #pick-panel, #booth-panel { grid-column: 1 / -1; }
 }
 
 @media (max-width: 600px) {
