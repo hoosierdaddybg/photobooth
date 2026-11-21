@@ -168,7 +168,7 @@ const SETTINGS = {
       caption: "Guard, #0, from Seattle",
       group: "Women's Hoops",
       image: "images/malia-samuels.jpg",
-      face: { x: 0.521, y: 0.213, rx: 0.223, ry: 0.111 },
+      face: { x: 0.455, y: 0.229, rx: 0.2, ry: 0.2 },
       credit: { text: "Photo provided by site owner" },
     },
 
