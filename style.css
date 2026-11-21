@@ -156,7 +156,41 @@ main {
 }
 
 /* ---------- picker ---------- */
-.shelf { margin-bottom: 14px; }
+.jump-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 14px;
+  padding: 10px;
+  background: #fff;
+  border: 3px dashed var(--crimson);
+  border-radius: 8px;
+}
+.jump-nav:empty { display: none; }
+.jump-btn {
+  font-family: "Bungee", Impact, sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  color: var(--cream);
+  background: var(--crimson);
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  padding: 8px 14px;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform .08s, box-shadow .08s;
+}
+.jump-btn:nth-child(even) { background: var(--cream); color: var(--crimson); }
+.jump-btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--ink); }
+.jump-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+.jump-btn:focus-visible { outline: 4px dashed var(--sky); outline-offset: 3px; }
+.shelf { margin-bottom: 14px; scroll-margin-top: 12px; }
+.back-top {
+  float: right;
+  font-size: 18px;
+  color: var(--crimson);
+  text-decoration: underline;
+}
+.back-top:hover { color: var(--hot); }
 .shelf h3 {
   font-family: "VT323", monospace;
   font-size: 24px;
@@ -387,6 +421,8 @@ footer {
   .hero { padding-top: 40px; }
   .panel { padding: 14px; }
   .btn-big { font-size: 17px; padding: 11px 18px; }
+  .jump-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .jump-btn { text-align: center; font-size: 14px; padding: 10px 6px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

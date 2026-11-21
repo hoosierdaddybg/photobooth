@@ -69,11 +69,34 @@
       if (!g) groups.push((g = { name: c.group, items: [] }));
       g.items.push(c);
     }
+    const nav = $("jump-nav");
+    groups.forEach((g, i) => {
+      g.id = "shelf-" + (g.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || i);
+      const a = document.createElement("a");
+      a.className = "jump-btn";
+      a.href = "#" + g.id;
+      a.textContent = g.name;
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.getElementById(g.id).scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      nav.append(a);
+    });
     for (const g of groups) {
       const shelf = document.createElement("div");
       shelf.className = "shelf";
+      shelf.id = g.id;
       const h = document.createElement("h3");
       h.textContent = g.name;
+      const top = document.createElement("a");
+      top.className = "back-top";
+      top.href = "#pick-panel";
+      top.textContent = "▲ back to sports";
+      top.addEventListener("click", (e) => {
+        e.preventDefault();
+        $("pick-panel").scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      h.append(top);
       const cards = document.createElement("div");
       cards.className = "cards";
       for (const c of g.items) {
