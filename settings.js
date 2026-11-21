@@ -23,6 +23,15 @@
 // =====================================================================
 
 const SETTINGS = {
+  // The landing page people see first. Set enabled: false to skip it.
+  splash: {
+    enabled: true,
+    title: "Happy Birthday, Blake!",
+    question: "What do you get for the Indiana fan who has everything?",
+    answer: "A chance to become a Hoosier legend.",
+    button: "ENTER THE PHOTOBOOTH",
+  },
+
   title: "HOOSIER DADDY PHOTOBOOTH",
   tagline: "Put your face on a Hoosier legend.",
 
