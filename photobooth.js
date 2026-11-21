@@ -478,6 +478,30 @@
     startCamera();
   }
 
+  // ---------- birthday landing page ----------
+  function setupSplash() {
+    const splash = $("splash");
+    const sp = S.splash || {};
+    if (sp.enabled === false) {
+      splash.hidden = true;
+      document.body.classList.remove("splash-open");
+      return;
+    }
+    if (sp.title) $("splash-title").textContent = sp.title;
+    if (sp.question) $("splash-question").textContent = sp.question;
+    if (sp.answer) $("splash-answer").textContent = sp.answer;
+    else $("splash-answer").hidden = true;
+    const enter = $("enter-btn");
+    if (sp.button) enter.textContent = sp.button;
+    const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    setTimeout(() => { splash.classList.add("ready"); }, reduce ? 0 : 1700);
+    enter.addEventListener("click", () => {
+      splash.classList.add("leaving");
+      document.body.classList.remove("splash-open");
+      setTimeout(() => { splash.hidden = true; }, 380);
+    });
+  }
+
   // ---------- wire up ----------
   cameraBtn.addEventListener("click", startCamera);
   snapBtn.addEventListener("click", snap);
@@ -486,6 +510,7 @@
   zoomInput.addEventListener("input", () => { zoom = parseFloat(zoomInput.value) || 1; });
   window.addEventListener("pagehide", stopCamera);
 
+  setupSplash();
   buildPicker();
   // start on Cignetti, or the first cutout
   const start = S.cutouts.find((c) => c.id === "cignetti") || S.cutouts[0];
